@@ -1,3 +1,11 @@
+header .white {
+    color: white
+}
+
 .answerChoice {
     background-color: #F1F1F1;
+}
+
+#final-score {
+    list-style: none;
 }

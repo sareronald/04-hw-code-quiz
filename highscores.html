@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>Coding Quiz Challenge Results!</title>
+</head>
+
+<body>
+    <header class="p-3" style="background-color:#17a2b8">
+    </header>
+    <div class="container">
+        <div class="row justify-content-center mt-5 pt-3 pb-3">
+            <div class="col-10 col-lg-8 text-center">
+                <form>
+                    <h1>All Done!</h1>
+                    <p>Your final score is " "</p>
+                    <ul id="final-score">
+                        <li id=0></li>
+                    </ul>
+                    <input placeholder="name" id="name" />
+                    <button id="add-btn">Submit</button>
+                </form>
+                <div id="modal-container" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                          <span class="close">&times;</span>
+                          <h2 id="modal-name">
+                          </h2>
+                        </div>
+                        <div class="modal-body">
+                          <h3>
+                            Description:
+                          </h3>
+                          <textarea id="description" cols="30" rows="10"></textarea>
+                          <div>
+                            <button id="save">Save</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="questions.js"></script>    
+    <script src="main.js"></script>
+</body>
+
+</html>
