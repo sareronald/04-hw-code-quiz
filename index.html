@@ -12,39 +12,32 @@
 </head>
 
 <body>
-    <header class="p-3" style="background-color:#17a2b8">
-        <a href="highscores.html" class="white">View High Scores</a>
-        <span id="timer" class="float-right mr-2 white">Time: 0</span>
-    </header>
-    <!--- Home Screen -->
-    <div class="container mt-5" id="home">
-        <div class="row justify-content-center mt-5 pt-3 pb-3">
-            <div class="col-10 col-lg-8 text-center">
-                <h1>Coding Quiz Challenge</h1>
-                <p>Try to answer the following code-related questions within the time limit.<br>
-                    <strong>NOTE: </strong>Keep in mind that incorrect answers will penalise your score/time by 10
-                    seconds</p>
-                <button type="button" id="startBtn" class="btn btn-info btn-lg">START</button>
+    <div id="intro">
+        <header class="p-3" style="background-color:#17a2b8">
+            <a href="highscores.html" class="white">View High Scores</a>
+            <span id="timer" class="float-right mr-2 white">Time: 0</span>
+        </header>
+
+        <!--- Home Screen & Start Quiz button -->
+        <div class="container mt-5" id="home">
+            <div class="row justify-content-center mt-5 pt-3 pb-3">
+                <div class="col-10 col-lg-8 text-center">
+                    <h1>Coding Quiz Challenge</h1>
+                    <p>Try to answer the following code-related questions within the time limit.<br>
+                        <strong>NOTE: </strong>Keep in mind that incorrect answers will penalise your score/time by 10
+                        seconds</p>
+                    <button type="button" id="startBtn" class="btn btn-info btn-lg">START</button>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Q&A's d-none?-->
+    <!-- Question Answer div-->
     <div class="container mt-5" id="quiz">
         <div class="row justify-content-center mt-5 pt-3 pb-3">
             <div id="questions">
-
             </div>
-            <!-- <div class="col-10 col-lg-8">
-                <h3 class="mb-4">Question</h3>
-                <ul class="list-unstyled">
-                    <li class="answerChoice A">A)</li>
-                    <li class="answerChoice B">B)</li>
-                    <li class="answerChoice C">C)</li>
-                    <li class="answerChoice D">D)</li>
-                </ul>
-                <p class="feedback"></p>
-            </div> -->
+            <!-- empty div for JavaScript to populate with Q&A-->
         </div>
     </div>
 

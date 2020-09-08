@@ -17,3 +17,7 @@ li{
 .col-10 col-lg-8 .question {
     margin: 20px
 }
+
+#submit-score {
+    display: none;
+}
