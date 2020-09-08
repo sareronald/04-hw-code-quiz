@@ -29,23 +29,39 @@
         </div>
     </div>
 
-    <!-- Q&A's -->
-    <div class="container mt-5 d-none" id="quiz">
+    <!-- Q&A's d-none?-->
+    <div class="container mt-5" id="quiz">
         <div class="row justify-content-center mt-5 pt-3 pb-3">
-            <div class="col-10 col-lg-8" id="QA-block">
-                <h3 id="questionText" class="mb-4">Question</h3>
-                <ul id="answers" class="list-unstyled">
-                    <li class="answerChoice">A)</li>
-                    <li class="answerChoice">B)</li>
-                    <li class="answerChoice">C)</li>
-                    <li class="answerChoice">D)</li>
+            <div id="questions">
+
+            </div>
+            <!-- <div class="col-10 col-lg-8">
+                <h3 class="mb-4">Question</h3>
+                <ul class="list-unstyled">
+                    <li class="answerChoice A">A)</li>
+                    <li class="answerChoice B">B)</li>
+                    <li class="answerChoice C">C)</li>
+                    <li class="answerChoice D">D)</li>
                 </ul>
                 <p class="feedback"></p>
-            </div>
+            </div> -->
         </div>
     </div>
 
     <!-- Finished Screen -->
+    <div class="container mt-5" id="submit-score">
+        <div class="row justify-content-center mt-5 pt-3 pb-3">
+            <div class="col-10 col-lg-8">
+                <h2>All Done!</h2>
+                <p id="user-score"> </p>
+                <form class="form-group">
+                    <label for="new-score">Enter your name: </label>
+                    <input type="text" id="userName">
+                    <button type="button" class="btn btn-info btn-sm submitBtn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -57,9 +73,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
-        <script src="questions.js"></script>
-        <script src="main.js"></script>
-    
+    <script src="main.js"></script>
+
 
 </body>
 

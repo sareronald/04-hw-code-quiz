@@ -1,27 +1,65 @@
-var questionsArray = [
-    {
-        questionText: "Commonly used data types DO NOT inlude:",
-        answers: ["alerts", "booleans", "numbers", "strings"],
-        answerId: 0
-    },
-    {
-        questionText: "The condition in an if/else statement is enclosed within __________",
-        answers: ["curly braces", "parenthesis", "quotes", "square brackets"],
-        answerId: 1
-    },
-    {
-        questionText: "Arrays in JavaScript can be used to store __________",
-        answers: ["booleans", "numbers and strings", "other arrays", "all of the above"],
-        answerId: 3
-    },
-    {
-        questionText: "String values must be enclosed within __________ when being assigned to variables.",
-        answers: ["commas", "curly braces", "quotes", "parenthesis"],
-        answerId: 2
-    },
-    {
-        questionText: "A very useful tool used during development and debugging for printing content to the debugger is:",
-        answers: ["JavaScript", "terminal/bash", "for loops", "console.log"],
-        answerId: 3
-    }
-]
+//basic variables
+var QuestionsIndex = 0;
+var time = questions.length*20;
+​
+function startQuiz(){
+	//hide start screen
+​
+	// unhide questions
+​
+	//start timer
+			setInterval(clock, 1000)
+	//show the time
+			// textContent = time
+	
+	getQuestions();			
+}
+​
+function clock(){
+	// update time
+	//end quiz if time <=0
+​
+}
+function getQuestion() {
+	//get current question from your array
+	//update question element with this question
+​
+	//loop through choice questions.choices.forEach or a for loop
+		//create button and append it to your html element
+		//choice event listener => optionClick()
+		
+​
+​
+}
+​
+function optionClick(){
+	// if condition 
+	//if incorrect => penalize time by reducing the time
+	//  if time < 0 time =0 
+​
+	// .play() //music
+	// wrong right text setTimeout display for a sec
+​
+	//move next by increasing the question index
+	// if condition to see if we have run out of questions 
+		// if yes quizEnd()
+		// else getQuestion()
+}
+​
+​
+function quizEnd() {
+​
+	// clearInterval
+	// show end screen
+	// hide questions element
+	// finaScore elment to the time
+​
+}
+​
+function saveHighscore() {
+	
+}
+​
+​
+​
+​
