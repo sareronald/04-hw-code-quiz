@@ -22,7 +22,7 @@ var questionsArray = [
         answerB: "numbers and strings",
         answerC: "other arrays",
         answerD: "all of the above",
-        correct: "C"
+        correct: "D"
     },
     {
         questionText: "String values must be enclosed within __________ when being assigned to variables.",
@@ -30,7 +30,7 @@ var questionsArray = [
         answerB: "curly braces",
         answerC: "quotes",
         answerD: "parenthesis",
-        correct: "B"
+        correct: "C"
     },
     {
         questionText: "A very useful tool used during development and debugging for printing content to the debugger is:",
@@ -41,17 +41,15 @@ var questionsArray = [
         correct: "D"
     }
 ];
-var secondsLeft = (questionsArray.length * 15 + 1);
-var quiz = document.getElementById("quiz")
-
-var timerEl = document.getElementById("#timer");
-var mainEl = document.getElementById("home");
-var answerChoices = document.getElementById("answers");
+var timerEl = document.querySelector(".timer");
 var introEl = document.getElementById("intro");
+var finalEl = document.getElementById("final-score")
+var questionEl = document.getElementById("questions")
+var feedback = document.querySelector(".feedback")
+var score = 0;
 
-//hide start screen
-
-// unhide questions
+// Generate Question
+// hide start screen ~ unhide questions
 var currentQuestionIndex = 0;
 function generateQuestion(i) {
     var q = questionsArray[i];
@@ -71,22 +69,26 @@ function generateQuestion(i) {
 //When a TIMER starts, the first question pops up ? 
 //document.textContent OR document.createElement OR appendChild?
 //show the time
+var secondsLeft = 80;
 function setTime() {
     var timerInterval = setInterval(function () {
+        timerEl.textContent = "Time: " + secondsLeft + " seconds remaining";
         secondsLeft--;
-        timerEl.textContent = secondsLeft;
 
         if (secondsLeft === 0) {
+            timerEl.textContent = "";
+            // or there are no more questions left?
             clearInterval(timerInterval);
+            showFinalScore();
         }
     }, 1000);
 }
 
-var questionCounter = 0;
 //function to swap welcome message with question #1
 startBtn.addEventListener("click", function () {
     introEl.style.display = "none";
-    var htmlString = ""
+    setTime()
+    var htmlString = "";
     htmlString += generateQuestion(currentQuestionIndex);
     questions.innerHTML = htmlString
 });
@@ -95,40 +97,54 @@ questions.addEventListener("click", function (event) {
     if (event.target.matches("li")) {
         var userChoice = event.target.getAttribute("data-answer");
         var correctAnswer = questionsArray[currentQuestionIndex].correct;
-
-        if (userChoice === correctAnswer) {
-            //increment score here
-        }
-        else {
-            //{derement from time here
-        }
-        currentQuestionIndex = currentQuestionIndex + 1
-        var htmlString = ""
-        htmlString += generateQuestion(currentQuestionIndex);
-        questions.innerHTML = htmlString;
     }
-})
 
-function startTimer() {
-    document.getElementById("home").onclick = "New Text";
+    if (userChoice === correctAnswer) {
+        var answerIsCorrect = document.createElement(correctAnswer);
+        answerIsCorrect.textContent = "Correct!";
+        feedback.innerHTML = answerIsCorrect;
+        score = score++
+    }
+    else {
+        var answerIsIncorrect = document.createElement(correctAnswer);
+        answerIsIncorrect.textContent = "Incorrect!";
+        feedback.innerHTML = answerIsIncorrect;
+        timerEl--
+    }
+    currentQuestionIndex = currentQuestionIndex + 1
+    // if (questionsArray) has a quesiton for currentQuestionIndex { 
+    // if (currentQuestionIndex = questionArray.length) {
+    var htmlString = "";
+    htmlString += generateQuestion(currentQuestionIndex);
+    questions.innerHTML = htmlString;
+    console.log(htmlString)
+})
+// else {
+// else you advance to the end of the quiz
+// questionEl.style.display = none;
+// finalEl.style.display = "block";
+
+//to add a name to the list of high scores in highscores.html
+var people = "";
+var currentId = 0;
+var nameEl = document.querySelector("#name");
+var finalScoreEl = document.querySelector("#final-score");
+
+function addPersonToList(event) {
+    event.preventDefault();
+    var name = nameEl.value;
+    var li = docuemtn.createElement("li");
+    li.id = people.length;
+    li.innerHTML = name;
+    people.push({ name: name });
+    finalScoreEl.append(li);
 }
 
-startTimer;
-
-// startBtn.addEventListener("click", startTimer);
-// submitBtn.addEventListener("click", function (event) {
-//    event.stopPropagation();
-//    addScore(); 
-// });
-
-// if you choose the correct answer the background colour of the text will turn GREEN 
-// and correct will come up at the bottom of the page
-// function answerIsCorrect() {
-//    document.getElementById().style.backgroundColor = "green"
-// }
-// if you choose the wrong answer the background colour of the text will turn RED
-// and incorrect will come up at the bottom of the page
-// and the counter looses time
-// function answerIsWrong() {
-//     document.getElementById().style.backgroundColor = "red"
-// }
+function handleClick(event) {
+    if (event.target.matches("button")){
+        event.presentDefault();
+        currentId = parseInt(event.target.parentElement.id);
+        var name = people[currentId].name;
+        modalNameEl.textContent = name;
+    }
+}

@@ -12,13 +12,13 @@
 </head>
 
 <body>
-    <div id="intro">
-        <header class="p-3" style="background-color:#17a2b8">
-            <a href="highscores.html" class="white">View High Scores</a>
-            <span id="timer" class="float-right mr-2 white">Time: 0</span>
-        </header>
+    <header class="p-3" style="background-color:#17a2b8">
+        <a href="highscores.html" class="white">View High Scores</a>
+        <span class="float-right mr-2 white timer"></span>
+    </header>
 
-        <!--- Home Screen & Start Quiz button -->
+    <!--- Home Screen & Start Quiz button -->
+    <div id="intro">
         <div class="container mt-5" id="home">
             <div class="row justify-content-center mt-5 pt-3 pb-3">
                 <div class="col-10 col-lg-8 text-center">
@@ -33,24 +33,28 @@
     </div>
 
     <!-- Question Answer div-->
-    <div class="container mt-5" id="quiz">
+    <div class="container mt-5">
         <div class="row justify-content-center mt-5 pt-3 pb-3">
             <div id="questions">
+                <!-- empty div for JavaScript to populate with Q&A-->
+                <div class="feedback">
+                </div>
             </div>
-            <!-- empty div for JavaScript to populate with Q&A-->
+
         </div>
     </div>
 
     <!-- Finished Screen -->
-    <div class="container mt-5" id="submit-score">
+    <div class="container mt-5 none" id="Final-Score">
         <div class="row justify-content-center mt-5 pt-3 pb-3">
-            <div class="col-10 col-lg-8">
+            <div class="col-10 col-lg-8 text-center">
                 <h2>All Done!</h2>
-                <p id="user-score"> </p>
+                <p id="user-score"></p>
                 <form class="form-group">
                     <label for="new-score">Enter your name: </label>
                     <input type="text" id="userName">
-                    <button type="button" class="btn btn-info btn-sm submitBtn">Submit</button>
+                    <button type="button" class="btn btn-info btn-lg submitBtn">Submit</button><br>
+
                 </form>
             </div>
         </div>
